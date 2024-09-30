@@ -18,7 +18,7 @@ const Ingame = () => {
 
     // function to get game information
     const getGame = async () => {
-        const result = await axios(`http://localhost:5000/games/${id}`).then(result => result.data.data.data).catch(err => navigate('/'))
+        const result = await axios(`https://my-games-back-end-11ab8bf14510.herokuapp.com/games/${id}`).then(result => result.data.data.data).catch(err => navigate('/'))
         setGame(result)
     }
 

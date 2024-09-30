@@ -1,14 +1,5 @@
-import axios from "axios"
-import { useState } from "react"
-
 
 const Gameform = ({value}) => {
-
-    // const handleUpload = async (e) => {
-    //     const formData = new FormData()
-    //     formData.append("image", e)
-    //     await axios.post("http://localhost:5000/games/", formData).then(res => console.log(res)).catch(err => console.log(err))
-    // }
 
     return(
         // <label className="w-[25vh]">

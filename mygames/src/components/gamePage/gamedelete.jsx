@@ -8,7 +8,7 @@ const Game_delete = ({id}) => {
 
     // function to send axios request to server to delete game
     const deleteGame = async () => {
-        axios.delete(`http://localhost:5000/games/${id}`).then((el) => {navigate("/"); alert("game got deleted")}).catch(err => alert(err))
+        axios.delete(`https://my-games-back-end-11ab8bf14510.herokuapp.com/games/${id}`).then((el) => {navigate("/"); alert("game got deleted")}).catch(err => alert(err))
     }
 
     return(

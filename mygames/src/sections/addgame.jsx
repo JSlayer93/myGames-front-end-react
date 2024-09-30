@@ -37,7 +37,7 @@ const Add_game = () => {
         formData.append("text", JSON.stringify(params))
         axios({ 
             // Endpoint to send files 
-            url: "http://localhost:5000/games", 
+            url: "https://my-games-back-end-11ab8bf14510.herokuapp.com/games", 
             method: "POST", 
             // Attaching the form data 
             data: formData
