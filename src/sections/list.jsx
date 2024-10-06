@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Card from "../components/homePage/card"
 import axios from "axios"
 import Loading from "../components/general/loading"
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 
 const List = (props) => {
 
@@ -13,17 +13,27 @@ const List = (props) => {
     // variable to set and see where is starting and ending list elements indexes which i have ro get for this particilar page
     const [start, setStart] = useState(!Number(id) ? 0 : Number(id)*8-8)
     const [end, setEnd] = useState(!Number(id) ? 8 : Number(id)*8)
+    // defining location to get elements from filter_game
+    const location = useLocation()
 
     // function to get all the games from api using axios method
-    const getGames = async() => {
-        var result = await axios("https://my-games-back-end-11ab8bf14510.herokuapp.com/games").then(result => id ? result.data.data.data.filter(el => el.name.toLowerCase().includes(id.toLowerCase())) : result.data.data.data).catch(err => getGames())
+    const getGames = async(info) => {
+        console.log(info)
+        var result = await axios.get("http://localhost:5000/games", {
+            params: {
+                info
+            }
+        }).then(
+            result => id ? result.data.data.data.filter(el => el.name.toLowerCase().includes(id.toLowerCase())
+        ) : result.data.data.data).catch(err => getGames())
         // id ? result.map(el => el.name == id) : result
         setGames(result)
     }
     
     // calling function getGames uning useEffect 
     useEffect(() => {
-        getGames();
+        const info = location.state
+        getGames(info);
     }, [id])
 
     return(

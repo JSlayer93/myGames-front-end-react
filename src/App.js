@@ -8,6 +8,7 @@ import Contact from "./pages/contact";
 import Game from "./pages/game";
 import Game_update from "./components/gamePage/gameupdate";
 import Add from "./pages/add";
+import Filter_games from "./pages/filter";
 
 
 
@@ -31,6 +32,8 @@ function App() {
           <Route path="update/:id" element={<Game_update />}/>
         </Route>
         <Route path="contact" element={<Contact />}/>
+        {/* Route to filter page */}
+        <Route path="filter" element={<Filter_games />}/>
         {/* Handling wrong path */}
         <Route path="*" element={<Wrong />}/>
       </Routes>

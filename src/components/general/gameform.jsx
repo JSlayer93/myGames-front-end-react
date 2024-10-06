@@ -1,19 +1,15 @@
 
-const Gameform = ({value}) => {
+const Gameform = ({value, filter}) => {
 
     return(
-        // <label className="w-[25vh]">
-        //     {name}:{"   "}
-        //     <input className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="text" placeholder="name" defaultValue={value}/>
-        // </label>
         <>
             <label className="w-[25vh]">
                 {"name: "}
-                <input required className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="text" placeholder="name" defaultValue={value && value["name"]}/>
+                <input required={!filter} className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="text" placeholder="name" defaultValue={value && value["name"]}/>
             </label>
             <label className="w-[25vh]">
                 {"genre: "}
-                <select required className="text-black" size='4' defaultValue={value && value["genre"]}>
+                <select required={!filter} className="text-black" size='4' defaultValue={value && value["genre"]}>
                     <option>shooter</option>
                     <option>adventure</option>
                     <option>platformer</option>
@@ -22,13 +18,13 @@ const Gameform = ({value}) => {
             </label>
             <label className="w-[25vh]">
                 {"rating: "}
-                <input required className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="number" max={10} min={0} placeholder="rating" defaultValue={value && value["rating"]}/>
+                <input required={!filter} className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="number" max={10} min={0} placeholder="rating" defaultValue={value && value["rating"]}/>
             </label>
             <label className="w-[25vh]">
                 {"playcount: "}
-                <input required className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="number" placeholder="playcount" defaultValue={value &&value["playCount"]}/>
+                <input required={!filter} className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="number" placeholder="playcount" defaultValue={value &&value["playCount"]}/>
             </label>
-            {!value && 
+            {!value && !filter &&
                 <>
                 <label className="w-[25vh]">
                     {"main picture: "}
