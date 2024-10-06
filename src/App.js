@@ -20,6 +20,8 @@ function App() {
       <Routes>
         {/* Route to homepage */}
         <Route path="/" element={<Home />}/>
+        {/* adding route to next and bacj pages */}
+        <Route path=":id" element={<Home />}/>
         {/* Route to search page */}
         <Route path="/search/:id" element={<Home />}/>
         {/* Route to about page */}

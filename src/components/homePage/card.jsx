@@ -7,7 +7,7 @@ const Card = ({image, name, desc, id}) => {
             <Link to={`/game/${id}`}>{
                 <>
                     <ul className="h-[30vh] w-100">
-                        <img className="relative duration-300 hover:scale-110 hover:brightness-100 h-[40vh] w-100 brightness-75" src={image} alt={name} />
+                        <img className="relative duration-300 hover:scale-110 hover:brightness-100 h-[40vh] w-[40vh] brightness-75" src={image} alt={name} />
                     </ul>
                     <nav className="bg-zinc-600 h-[10vh] opacity-80 text-white">
                         <p className="text-[4vh] font-mono">{name.length > 10 ? name.slice(0, 10) + '...' : name}</p>

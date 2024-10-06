@@ -18,13 +18,12 @@ const List = (props) => {
 
     // function to get all the games from api using axios method
     const getGames = async(info) => {
-        console.log(info)
         var result = await axios.get("https://my-games-back-end-11ab8bf14510.herokuapp.com/games", {
             params: {
                 info
             }
         }).then(
-            result => id ? result.data.data.data.filter(el => el.name.toLowerCase().includes(id.toLowerCase())
+            result => id && !Number(id) ? result.data.data.data.filter(el => el.name.toLowerCase().includes(id.toLowerCase())
         ) : result.data.data.data).catch(err => getGames())
         // id ? result.map(el => el.name == id) : result
         setGames(result)
@@ -47,7 +46,7 @@ const List = (props) => {
                     {
                         // showing all the cards of the games
                         games && games.slice(start, end).map((el, index) => (
-                            <Card image={el.pictures[1]} name={el.name} desc={el.genre} id={el._id} key={index}/>
+                            <Card image={el.pictures[1] ? el.pictures[1] : el.pictures[0]} name={el.name} desc={el.genre} id={el._id} key={index}/>
                         ))
                     }
                 </div>
