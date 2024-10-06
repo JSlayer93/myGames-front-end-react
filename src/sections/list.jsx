@@ -19,7 +19,7 @@ const List = (props) => {
     // function to get all the games from api using axios method
     const getGames = async(info) => {
         console.log(info)
-        var result = await axios.get("http://localhost:5000/games", {
+        var result = await axios.get("https://my-games-back-end-11ab8bf14510.herokuapp.com/games", {
             params: {
                 info
             }
