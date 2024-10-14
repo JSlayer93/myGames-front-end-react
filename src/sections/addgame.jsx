@@ -26,18 +26,22 @@ const Add_game = () => {
         formData.append("mainPic",e[0][0])
 
         for (let i = 0; i < e[1].length; i++) {
-            formData.append("pictures",e[1][i])           
+            if(e[1][i].type == 'image/jpeg' || e[1][i].type == 'image/png'){
+                formData.append("pictures",e[1][i])  
+            }else if(e[1][i].type == 'video/mp4'){
+                formData.append("videos",e[1][i])
+            }
         }
         return formData
     }
 
-    const add_game = async(params, pics) => {
+    const add_game = async(params, files) => {
         let formData = new FormData()
-        formData = pics
+        formData = files
         formData.append("text", JSON.stringify(params))
         axios({ 
             // Endpoint to send files 
-            url: "https://my-games-back-end-11ab8bf14510.herokuapp.com/games", 
+            url: "https://my-games-back-end-11ab8bf14510.herokuapp.com/games/", 
             method: "POST", 
             // Attaching the form data 
             data: formData

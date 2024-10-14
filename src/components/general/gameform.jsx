@@ -32,7 +32,7 @@ const Gameform = ({value, filter}) => {
                 </label>
                 <label className="w-[25vh]">
                     {"other picture: "}
-                    <input onChange={e => e.target.files.length > 5 && (alert("upload less"), e.target.value = "")} type="file" multiple accept="image/png, image/jpeg"  />
+                    <input onChange={e => e.target.files.length > 5 && (alert("upload less"), e.target.value = "")} type="file" multiple accept="image/png, image/jpeg, video/mp4"  />
                 </label>
                 </>
             }

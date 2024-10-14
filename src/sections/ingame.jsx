@@ -38,7 +38,7 @@ const Ingame = () => {
                     </nav> */}
                     <Pictures game={game} key={Math.random()}/>
                     <div className="text-white text-[2vh] grid grid-cols-4 gap-10 place-items-center mt-[5vh] pb-[5vh]">
-                        {Object.keys(game).map((name, index) => (name != "mainPic" && name != "pictures" && name != "__v" && name != "_id" && name != "createdAt" &&
+                        {Object.keys(game).map((name, index) => (name != "mainPic" && name != "pictures" && name != 'videos' && name != "__v" && name != "_id" && name != "createdAt" &&
                             <Game_details title={name} info={Object.values(game)[index]} key={index}/>
                         ))}
                     </div>
