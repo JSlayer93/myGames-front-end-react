@@ -3,7 +3,7 @@ const Gameform = ({value, filter}) => {
 
     return(
         <>
-            <label className="w-[25vh]">
+            <label hidden={filter} className="w-[25vh]">
                 {"name: "}
                 <input required={!filter} className="h-[4vh] rounded-2xl [5vh] pl-[1vh] bg-slate-500" type="text" placeholder="name" defaultValue={value && value["name"]}/>
             </label>

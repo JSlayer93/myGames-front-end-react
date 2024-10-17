@@ -34,7 +34,9 @@ const List = (props) => {
     useEffect(() => {
         const info = location.state
         getGames(info);
-    }, [id])
+        setStart(!Number(id) ? 0 : Number(id)*8-8)
+        setEnd(!Number(id) ? 8 : Number(id)*8)
+    }, [id, location.state])
 
     return(
         <section className="h-[100vh] grid place-content-center">
