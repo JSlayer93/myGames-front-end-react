@@ -31,13 +31,10 @@ const Ingame = () => {
             {game ?
                 <div className="pt-[5vh]">
                     <nav className="flex justify-center items-center">
-                        <h1 className="text-[10vh] text-white">{game.name}</h1>
+                        <h1 className="text-[10vh] max-md:text-[5vh] text-white">{game.name}</h1>
                     </nav>
-                    {/* <nav className="h-[50vh] w-full flex justify-center items-center">
-                        <img className="h-[50vh] w-[100vh] rounded-xl" src={imageLink} alt="" />
-                    </nav> */}
                     <Pictures game={game} key={Math.random()}/>
-                    <div className="text-white text-[2vh] grid grid-cols-4 gap-10 place-items-center mt-[5vh] pb-[5vh]">
+                    <div className="text-white text-[2vh] grid grid-cols-4 max-md:grid-cols-2 gap-10 place-items-center mt-[5vh] pb-[5vh]">
                         {Object.keys(game).map((name, index) => (name != "mainPic" && name != "pictures" && name != 'videos' && name != "__v" && name != "_id" && name != "createdAt" &&
                             <Game_details title={name} info={Object.values(game)[index]} key={index}/>
                         ))}

@@ -65,7 +65,6 @@ const Add_game = () => {
                                 index == 4 || index == 5 ? el.files : null
                             )
                         ))
-
                     )
                         )} className="grid gap-4 grid-cols-1 text-white">
                         <Gameform />
@@ -74,7 +73,7 @@ const Add_game = () => {
                 </div>
             </section>
             :
-            <div className="h-[100vh]">
+            <div className="h-screen">
                 <Loading/>
             </div>
         }
